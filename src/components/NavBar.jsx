@@ -1,9 +1,11 @@
 import React from "react";
+import styled from "styled-components";
+
 
 const Navbar = () => {
   return (
     <Wrapper>
-      <div>Welcome, to Thapa Education Hub</div>
+      <div>Welcome, to  Education Hub</div>
       <h1>Admin Table</h1>
 
       <section>
@@ -42,6 +44,37 @@ const Navbar = () => {
   );
 };
 
+const Wrapper = styled.section`
+  nav {
+    margin: 3rem 0;
+    background: #f9f9f9;
+    padding: 1rem 0;
+  }
+  nav .menuItems {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  nav .menuItems li {
+    margin: 1.6rem 5rem;
+  }
+  nav .menuItems li a {
+    text-decoration: none;
+    color: #8f8f8f;
+    font-size: 24px;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+  }
+  
 
+  @media screen and (max-width: 998px) {
+    nav .menuItems li {
+      margin: 0.6rem 5rem;
+    }
+  }
+`;
 
-export default Navbar;
+ export default Navbar;
