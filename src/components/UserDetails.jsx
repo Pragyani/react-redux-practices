@@ -1,26 +1,32 @@
 import DeleteAllusers from "./DeleteAllusers";
 import styled from "styled-components";
+import fakeUserData from "../apiData";
 
 const UserDetails = () => {
-    return (
-        <>
-        <Wrapper>
-            <div className="content">
-                <div className="admin-table">
-                    <div className="admin-subtitle">List of User Details</div>
-                    <button className="btn add-btn">Add New Users</button>
-                </div>
-                <ul>
+
+  const addNewUser = (data) => {
+  console.log(data)
+  }
+
+  return (
+    <>
+      <Wrapper>
+        <div className="content">
+          <div className="admin-table">
+            <div className="admin-subtitle">List of User Details</div>
+            <button className="btn add-btn" onClick={() => addNewUser(fakeUserData())}>Add New Users</button>
+          </div>
+          {/* <ul>
                     <li>hie</li>
                     <li>hi</li>
-                </ul>
-                <hr />
-                <DeleteAllusers />
-            </div>
+                </ul> */}
+          <hr />
+          <DeleteAllusers />
+        </div>
 
-            </Wrapper>
-        </>
-    )
+      </Wrapper>
+    </>
+  )
 }
 const Wrapper = styled.section`
   margin: 1rem 3.2rem;
