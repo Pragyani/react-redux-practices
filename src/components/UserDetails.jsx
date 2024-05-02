@@ -3,11 +3,11 @@ import styled from "styled-components";
 import fakeUserData from "../apiData";
 import { useDispatch } from "react-redux";
 import { addUser } from "../store/Slices/userSlice";
+import DisplayUserName from "./DisplayUserName";
 
 const UserDetails = () => {
- 
-  const dispatch= useDispatch()
 
+  const dispatch= useDispatch()
   const addNewUser = (data) => {
   console.log(data)
   dispatch(addUser(data))
@@ -21,10 +21,9 @@ const UserDetails = () => {
             <div className="admin-subtitle">List of User Details</div>
             <button className="btn add-btn" onClick={() => addNewUser(fakeUserData())}>Add New Users</button>
           </div>
-          {/* <ul>
-                    <li>hie</li>
-                    <li>hi</li>
-                </ul> */}
+          <ul>
+            <DisplayUserName/>
+                </ul>
           <hr />
           <DeleteAllusers />
         </div>
