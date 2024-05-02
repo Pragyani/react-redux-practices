@@ -2,18 +2,24 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-const DisplayUserName=()=>{
-    const data = useSelector((userData)=>{
+const DisplayUserName = () => {
+    const data = useSelector((userData) => {
         return userData.users
     })
     console.log(data)
-    return(
-      <>
-      <Wrapper>
+    return (
+        <>
+            <Wrapper>
+                {
+                    data.map((userName, id) => {
+                        return <li key={id}>
+                            {userName}
+                        </li>
+                    })
+                }
+            </Wrapper>
+        </>)
 
-      </Wrapper>
-      </>)
-    
 }
 const Wrapper = styled.section`
   li{
